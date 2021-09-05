@@ -27,10 +27,10 @@ function showProductsList(array) {
       ` </small>
                     </div>
                         <p class="mb-1"> ` +
-      product.description + 
-      ` </p> Precio: `  +
-      product.cost + 
-      `  </p> Vendidos:   `  +
+      product.description +
+      ` </p> Precio: ` +
+      product.cost +
+      `  </p> Vendidos:   ` +
       product.soldCount +
       ` </p> 
                         
@@ -52,4 +52,80 @@ document.addEventListener("DOMContentLoaded", function (e) {
       showProductsList(productsArray);
     }
   });
+});
+
+function ascendente() {
+  productsArray.sort((a, b) => {
+    if (a.cost > b.cost) {
+      return 1;
+    }
+    if (a.cost < b.cost) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  showProductsList(productsArray);
+}
+
+function descendente() {
+  productsArray.sort((a, b) => {
+    if (a.cost < b.cost) {
+      return 1;
+    }
+    if (a.cost > b.cost) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  showProductsList(productsArray);
+}
+
+function sortCant() {
+  productsArray.sort((a, b) => {
+    if (a.soldCount < b.soldCount) {
+      return 1;
+    }
+    if (a.soldCount > b.soldCount) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+  showProductsList(productsArray);
+}
+
+function filtrar() {
+  var min = parseInt(document.getElementById("minimo").value);
+  var max = parseInt(document.getElementById("maximo").value);
+  let filtrados = [];
+
+  for (let product of productsArray) {
+    if (product.cost >= min && product.cost <= max) {
+      filtrados.push(product);
+    }
+  }
+  showProductsList(filtrados);
+}
+
+function limpiar() {
+  document.getElementById("minimo").value = "";
+  document.getElementById("maximo").value = "";
+
+  showProductsList(productsArray);
+}
+
+let busqueda = [];
+function buscar() {
+  let buscado = document.getElementById("buscador").value;
+
+  let busqueda = productsArray.filter(product => {
+    return product.name.toLowerCase().indexOf(buscado.toLowerCase()) > -1 || product.description.toLowerCase().indexOf(buscado.toLowerCase()) > -1 ;
+  })
+  showProductsList(busqueda);
+}
+
+document.getElementById("buscador").addEventListener("keyup", () =>{
+  buscar();
 });

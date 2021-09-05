@@ -1,6 +1,6 @@
 body {
-  background-color: rgb(130, 195, 233);
-  background-image: url("img/login.png");
+  background-color: rgb(244, 249, 252);
+  background-image: url("../img/login.png");
   background-repeat: no-repeat;
   top: 0mm;
   left: 50%;
@@ -18,7 +18,7 @@ body {
   width: 300px;
   position: fixed;
   top: 15%;
-  left: 40%;
+  left: 70%;
   float: right;
   background-color: rgba(31, 28, 28, 0.5) !important;
 }
