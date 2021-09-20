@@ -17,6 +17,7 @@
     <script src="js/login.js"></script>
     <script src="js/logout.js"></script>
     <script src="js/google.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>eMercado - Todo lo que busques está aquí</title>
 
     <link
@@ -30,6 +31,8 @@
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    
+
   </head>
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
@@ -175,9 +178,11 @@
       let datos = JSON.parse (localStorage.getItem("datos"));
   document.getElementById("perfil").innerHTML = datos.nombre;
     </script> -->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/logout.js"></script>
+    <div id="spinner-wrapper"><div></div><div></div><div></div><div></div></div></div>
   </body>
 </html>
