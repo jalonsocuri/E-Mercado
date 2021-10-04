@@ -25,6 +25,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  
   </head>
 
   <body>
@@ -40,9 +41,14 @@
           >Productos</a
         >
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-        <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-        <a class="py-2 d-none d-md-inline-block" href="my-profile.html" id="perfil"></a>
-        <button class="btn btn-danger" type="button" onclick="desconectar();">Cerrar Sesión </button>
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" > <a class="py-2 d-none d-md-inline-block" id="perfil"></a> <span class="sr-only">Toggle Dropdown</span></button>
+
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item"  href="my-profile.html" id="perfil">Mi Perfil</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <button class="btn btn-danger" type="button" onclick="desconectar();">Cerrar Sesión </button>
+          </div>
       </div>
     </nav>
     <main role="main">
@@ -87,6 +93,10 @@
               class="row text-center text-lg-left pt-2"
               id="productImages"
             ></div>
+          </dd>
+          <dt>Productos Relacionados</dt>
+          <dd>
+            <div class="row text-center text-lg-left pt-2" id="productosRelacionados"></div>
           </dd>
         </dl>
         <a

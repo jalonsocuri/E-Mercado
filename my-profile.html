@@ -40,8 +40,14 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <button class="btn btn-danger" type="button" onclick="desconectar();">Cerrar Sesión </button>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" > <a class="py-2 d-none d-md-inline-block" id="perfil"></a> <span class="sr-only">Toggle Dropdown</span></button>
+
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item"  href="my-profile.html" id="perfil">Mi Perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <button class="btn btn-danger" type="button" onclick="desconectar();">Cerrar Sesión </button>
+        </div>
     </div>
   </nav>
   <div class="container p-5">
@@ -64,20 +70,19 @@
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
-  <div id="spinner-wrapper">
-    <div class="lds-ring">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <div id="spinner-wrapper"><div></div><div></div><div></div><div></div></div></div>
     </div>
   </div>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
   <script src="js/logout.js"></script>
+  
+  
 </body>
 
 </html>
